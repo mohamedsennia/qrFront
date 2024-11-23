@@ -1,0 +1,50 @@
+:host{
+    display: flex;
+    background-color: #faf3e0;
+    height: 90vh    ;
+    color: #333333;
+  
+    align-items: center;
+    flex-direction: column;
+}
+h1{
+    margin: 5% 0% 1% 0%;
+}
+
+.button{
+    background-color: #217b7e;
+    
+}
+
+.custom-file-upload {
+    margin-top: 25%;
+    position: relative;
+    display: inline-block;
+   
+}
+
+.custom-file-upload .button {
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bolder;
+    font-size: 16pt;
+    transition: background-color 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+.custom-file-upload .button:hover {
+    background-color: #388e3c;
+}
+
+.custom-file-upload input[type="file"]
+              ::-webkit-file-name-text {
+    color: black;
+}

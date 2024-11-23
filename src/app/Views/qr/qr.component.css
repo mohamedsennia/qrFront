@@ -1,0 +1,12 @@
+:host{
+    display: flex;
+    background-color: #faf3e0;
+    height: 90vh    ;
+    color: #333333;
+  
+    align-items: center;
+    flex-direction: column;
+}
+h1{
+    margin: 5% 0% 1% 0%;
+}

@@ -1,0 +1,10 @@
+<h1>Welcome to QR generator</h1>
+<p>Transform any file you want to QR code so you can share it easily</p>
+<form>
+    <div class="custom-file-upload">
+        
+        <input #fileInput id="fileInput" type="file" (change)="onFileSelected($event)" style="opacity: 0;">
+        <div (click)="openFileSelect()" class="button">Choose File</div>
+       </div>
+</form>
+
