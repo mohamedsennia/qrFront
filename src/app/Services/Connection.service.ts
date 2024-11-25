@@ -10,7 +10,7 @@ constructor(private httpClient:HttpClient){
     
 }
 uploadFile(formData:FormData):Observable<CostumeImage>{
-    console.log("aqsdsdqiof")
+
 return this.httpClient.post<CostumeImage>(this.link+"/upload",formData).pipe(map(param=>{
     
     return new CostumeImage(param['url']);
