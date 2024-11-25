@@ -10,26 +10,32 @@ import { Router } from '@angular/router';
 })
 export class UploadComponent {
   @ViewChild('fileInput') fileInput: any;
+  private fileUploaded:boolean;
+  public file:File;
   constructor(private connectionService:ConnectionService,private imageService:ImageService,private router:Router){
-
+    this.fileUploaded=false;
+    this.file=null;
   }
   onFileSelected(event){
 
-      let file:File=event.target.files[0];
- 
+      this.file=event.target.files[0];
+      this.fileUploaded=true;
+    }
+    sendFile(){
+      const formData = new FormData();
+      formData.append('multipartFile', this.file);
     
-    const formData = new FormData();
-    formData.append('multipartFile', file);
-    
-    console.log("a")
-    this.connectionService.uploadFile(formData).subscribe(param=>{
-      this.imageService.imageLink=param.getUrl();
-      this.router.navigate(["/QR"])
-     
-    })
-   
+
+      this.connectionService.uploadFile(formData).subscribe(param=>{
+        this.imageService.imageLink=param.getUrl();
+        this.router.navigate(["/QR"])
+       
+      })
     }
     openFileSelect(){
       this.fileInput.nativeElement.click();
+    }
+    removeFile(){
+      this.file=null
     }
 }

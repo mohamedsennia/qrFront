@@ -1,10 +1,15 @@
 <h1>Welcome to QR generator</h1>
 <p>Transform any file you want to QR code so you can share it easily</p>
 <form>
-    <div class="custom-file-upload">
+    <div class="custom-file-upload container" *ngIf="file==null">
         
         <input #fileInput id="fileInput" type="file" (change)="onFileSelected($event)" style="opacity: 0;">
         <div (click)="openFileSelect()" class="button">Choose File</div>
        </div>
+    <div *ngIf="file!=null" class="container">
+        <span id="file-name">{{file.name}}</span>
+        <div class="button" (click)="sendFile()">confirm</div>
+        <span id="back"><i class="fa-solid fa-arrow-left fa-2xl" (click)="removeFile()"></i> Back</span>
+    </div>
 </form>
 

@@ -8,5 +8,6 @@
     flex-direction: column;
 }
 h1{
-    margin: 5% 0% 1% 0%;
+    margin: 5% 5% 1% 5%;
+    text-align: center;
 }
